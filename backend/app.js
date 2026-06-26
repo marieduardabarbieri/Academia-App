@@ -8,6 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const alunosRoutes = require("./routes/alunos");
+
+app.use("/alunos", alunosRoutes);
+
 async function iniciarServidor() {
   await conectarBanco();
 
