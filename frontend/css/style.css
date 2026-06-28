@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    Segoe UI,
+    sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.menu {
+  width: 260px;
+  background: #79a3c3;
+  color: white;
+  padding: 30px;
+}
+
+.menu h2 {
+  margin-bottom: 40px;
+  font-size: 28px;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu li {
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu li:hover {
+  background: #3c507d;
+}
+
+.ativo {
+  background: #3c507d;
+}
+
+.menu i {
+  width: 25px;
+}
+
+main {
+  flex: 1;
+  padding: 40px;
+}
+
+header {
+  margin-bottom: 25px;
+}
+
+header h1 {
+  color: #3a2119;
+  font-weight: 300;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+form {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+input {
+  flex: 1;
+  min-width: 220px;
+  padding: 12px;
+  border: 2px solid #d2e2ec;
+  border-radius: 8px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #79a3c3;
+}
+
+button {
+  background: #3c507d;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #2f436d;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #79a3c3;
+  color: white;
+  padding: 14px;
+}
+
+td {
+  padding: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background: #f7f7f7;
+}
