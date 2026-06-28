@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>GymManager</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <aside class="menu">
+        <h2><i class="fa-solid fa-dumbbell"></i> GymManager</h2>
+
+        <ul>
+          <li class="ativo">
+            <i class="fa-solid fa-user"></i>
+            Alunos
+          </li>
+
+          <li>
+            <i class="fa-solid fa-person-running"></i>
+            Exercícios
+          </li>
+
+          <li>
+            <i class="fa-solid fa-clipboard-list"></i>
+            Treinos
+          </li>
+
+          <li>
+            <i class="fa-solid fa-user-tie"></i>
+            Instrutores
+          </li>
+
+          <li>
+            <i class="fa-solid fa-id-card"></i>
+            Matrículas
+          </li>
+        </ul>
+      </aside>
+
+      <main>
+        <header>
+          <h1>Cadastro de Alunos</h1>
+        </header>
+
+        <section class="card">
+          <form>
+            <input id="nome" type="text" placeholder="Nome" />
+
+            <input id="email" type="email" placeholder="Email" />
+
+            <input id="idade" type="number" placeholder="Idade" />
+
+            <button type="submit">Salvar</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Idade</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+
+            <tbody id="listaAlunos"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
