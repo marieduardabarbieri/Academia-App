@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>GymManager</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <aside class="menu">
+        <h2>
+          <i class="fa-solid fa-dumbbell"></i>
+
+          GymManager
+        </h2>
+
+        <ul>
+          <li class="ativo">
+            <a href="index.html">
+              <i class="fa-solid fa-house"></i>
+
+              Dashboard
+            </a>
+          </li>
+
+          <li>
+            <a href="alunos.html">
+              <i class="fa-solid fa-user"></i>
+
+              Alunos
+            </a>
+          </li>
+
+          <li>
+            <a href="instrutores.html">
+              <i class="fa-solid fa-user-tie"></i>
+
+              Instrutores
+            </a>
+          </li>
+
+          <li>
+            <a href="exercicios.html">
+              <i class="fa-solid fa-person-running"></i>
+
+              Exercícios
+            </a>
+          </li>
+
+          <li>
+            <a href="treinos.html">
+              <i class="fa-solid fa-clipboard-list"></i>
+
+              Treinos
+            </a>
+          </li>
+
+          <li>
+            <a href="matriculas.html">
+              <i class="fa-solid fa-id-card"></i>
+
+              Matrículas
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <main>
+        <header>
+          <h1>Cadastro de Instrutores</h1>
+        </header>
+
+        <section class="card">
+          <form id="formInstrutor">
+            <input id="nome" type="text" placeholder="Nome" />
+
+            <input
+              id="especialidade"
+              type="text"
+              placeholder="Especialidade. Ex: Musculação"
+            />
+
+            <button id="btnSalvar" type="submit">Salvar</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Especialidade</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+
+            <tbody id="listaInstrutores"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/instrutores.js"></script>
+  </body>
+</html>
