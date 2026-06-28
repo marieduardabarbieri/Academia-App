@@ -181,3 +181,31 @@ tr:hover {
 .card-home p {
   color: #777;
 }
+
+/*Responsável por estilizar checbox para escolher exercícios para seu treino*/
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.checkbox-item input {
+  width: 18px;
+  height: 18px;
+}
+
+.checkbox-group {
+  max-height: 180px;
+  overflow-y: auto;
+}

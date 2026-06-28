@@ -5,17 +5,26 @@ let treinoEditando = null;
 const form = document.getElementById("formTreino");
 const listaTreinos = document.getElementById("listaTreinos");
 const selectInstrutor = document.getElementById("instrutor");
-const selectExercicios = document.getElementById("exercicios");
+const listaExercicios = document.getElementById("listaExercicios");
 const btnSalvar = document.getElementById("btnSalvar");
+
+//Responsáveis por guarda o ID de mapa e exercicio. Ex: IdInstrutor -----------> Nome
+let mapaInstrutores = {};
+let mapaExercicios = {};
 
 async function carregarInstrutores() {
     const resposta = await fetch("http://localhost:3000/instrutores");
     const instrutores = await resposta.json();
 
+    mapaInstrutores = {};
+
     selectInstrutor.innerHTML =
         '<option value="">Selecione um instrutor</option>';
 
     instrutores.forEach(instrutor => {
+        //Troca Id do instrutor pelo seu nome, fazendo com que na hora do carregamento, não mostrre ao usuário o ID do instrutor e sim seu nome
+        mapaInstrutores[instrutor._id] = instrutor.nome;
+
         selectInstrutor.innerHTML += `
             <option value="${instrutor._id}">
                 ${instrutor.nome}
@@ -28,13 +37,22 @@ async function carregarExercicios() {
     const resposta = await fetch("http://localhost:3000/exercicios");
 
     const exercicios = await resposta.json();
-    selectExercicios.innerHTML = "";
+    mapaExercicios = {};
+
+    listaExercicios.innerHTML = "";
 
     exercicios.forEach(exercicio => {
-        selectExercicios.innerHTML += `
-            <option value="${exercicio._id}">
+        //Troca Id do exercicio pelo seu nome, fazendo com que na hora do carregamento, não mostrre ao usuário o ID do exercicio e sim seu nome
+        mapaExercicios[exercicio._id] = exercicio.nome;
+
+        listaExercicios.innerHTML += `
+           <label class="checkbox-item">
+                <input
+                    type="checkbox"
+                    value="${exercicio._id}"
+                >
                 ${exercicio.nome}
-            </option>
+            </label>
         `;
     });
 }
@@ -49,8 +67,11 @@ async function carregarTreinos() {
         listaTreinos.innerHTML += `
             <tr>
                 <td>${treino.nome}</td>
-                <td>${treino.instrutorId}</td>
-                <td>${treino.exercicios.join(", ")}</td>
+                <td> ${mapaInstrutores[treino.instrutorId] || treino.instrutorId}</td>
+                <td> ${treino.exercicios
+                .map(id => mapaExercicios[id] || id)
+                .join(", ")} 
+                </td>
                 <td>
                     <button
                         class="btnEditar"
@@ -76,8 +97,11 @@ async function cadastrarTreino(event) {
     event.preventDefault();
 
     const exerciciosSelecionados =
-        Array.from(selectExercicios.selectedOptions)
-            .map(opcao => opcao.value);
+        Array.from(
+            document.querySelectorAll(
+                "#listaExercicios input:checked"
+            )
+        ).map(input => input.value);
 
     const treino = {
         nome: document.getElementById("nome").value,
@@ -124,9 +148,11 @@ async function editarTreino(id) {
 
     selectInstrutor.value = treino.instrutorId;
 
-    Array.from(selectExercicios.options).forEach(opcao => {
-        opcao.selected = treino.exercicios.includes(opcao.value);
-    });
+    document.querySelectorAll("#listaExercicios input")
+        .forEach(input => {
+            input.checked =
+                treino.exercicios.includes(input.value);
+        });
 
     btnSalvar.innerText = "Atualizar";
 
