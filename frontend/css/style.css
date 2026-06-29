@@ -56,6 +56,9 @@ body {
   width: 25px;
 }
 
+.menu h2 i {
+  margin-right: 15px;
+}
 main {
   flex: 1;
   padding: 40px;
@@ -227,7 +230,6 @@ tr:hover {
 
 .checkbox-item {
   display: flex;
-  align-items: center;
   gap: 10px;
   background: #f4f4f4;
   padding: 10px;
@@ -241,6 +243,6 @@ tr:hover {
 }
 
 .checkbox-group {
-  max-height: 180px;
+  max-height: 50px;
   overflow-y: auto;
 }
