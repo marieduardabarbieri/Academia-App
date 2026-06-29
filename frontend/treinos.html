@@ -74,13 +74,26 @@
 
         <section class="card">
           <form id="formTreino">
-            <input id="nome" type="text" placeholder="Nome do treino" />
+            <div class="campo">
+              <label>Nome do Treino</label>
+              <input
+                id="nome"
+                type="text"
+                placeholder="Nome do treino. Ex: Treino C"
+              />
+            </div>
 
-            <select id="instrutor">
-              <option value="">Selecione o instrutor</option>
-            </select>
+            <div class="campo">
+              <label>Nome do Instrutor</label>
+              <select id="instrutor">
+                <option value="">Selecione o instrutor</option>
+              </select>
+            </div>
 
-            <div id="listaExercicios" class="checkbox-group"></div>
+            <div class="campo">
+              <label>Selecione os Exercícios</label>
+              <div id="listaExercicios" class="checkbox-group"></div>
+            </div>
 
             <button id="btnSalvar" type="submit">Salvar</button>
           </form>
