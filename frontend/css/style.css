@@ -207,6 +207,16 @@ tr:hover {
   color: #777;
 }
 
+.qntd_colecao {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.qntd_colecao h3 {
+  margin-right: 5px;
+}
+
 /*Responsável por estilizar checbox para escolher exercícios para seu treino*/
 .checkbox-group {
   display: flex;
