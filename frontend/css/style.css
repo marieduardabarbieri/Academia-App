@@ -81,7 +81,31 @@ header h1 {
 form {
   display: flex;
   gap: 15px;
+  align-items: flex-end;
   flex-wrap: wrap;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #3a2119;
+}
+
+.campo input,
+.campo select {
+  width: 220px;
+  height: 46px;
+  margin-right: 30px;
+  padding: 10px 15px;
+  border: 1px solid #bfd7ea;
+  border-radius: 10px;
+  font-size: 15px;
+  background: white;
 }
 
 input {
@@ -112,6 +136,7 @@ button:hover {
   background: #2f436d;
 }
 
+/*Estilização da tabela que vai carregar os dados na tela */
 table {
   width: 100%;
   border-collapse: collapse;
